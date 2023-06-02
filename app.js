@@ -32,7 +32,9 @@ const registerRoutes=require('./apis/register');
 const contactlist=require('./apis/list');
 app.use('/auth',registerRoutes) 
 app.use('/contact',contactlist)
-
+app.use((req,res)=>{
+    res.send("Welcome to Xeno Server");
+  })
 app.use((req,res,next)=>{
  const err=new Error("Not Found")
  err.status=404
